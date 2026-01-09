@@ -65,42 +65,6 @@ document.querySelectorAll('.stat-number').forEach(stat => {
     statObserver.observe(stat);
 });
 
-// Navbar scroll effect
-let lastScroll = 0;
-const nav = document.querySelector('.nav');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        nav.style.padding = '10px 25px';
-    } else {
-        nav.style.padding = '12px 30px';
-    }
-    
-    lastScroll = currentScroll;
-});
-
-// Parallax effect for hero and hide scroll indicator
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
-    }
-    
-    // Hide scroll indicator when user starts scrolling
-    if (scrollIndicator) {
-        if (scrolled > 100) {
-            scrollIndicator.classList.add('hidden');
-        } else {
-            scrollIndicator.classList.remove('hidden');
-        }
-    }
-});
 
 // Work items stagger animation
 const workItems = document.querySelectorAll('.work-item');
